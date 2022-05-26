@@ -1,11 +1,11 @@
-# postcss-color-hcl [![Build Status](https://travis-ci.org/devgru/postcss-color-hcl.png)](https://travis-ci.org/postcss/postcss-color-hcl)
+# postcss-color-hct
 
-> [PostCSS](https://github.com/postcss/postcss) plugin to transform [hcl() color](http://hclwizard.org/hcl-color-scheme/) to compatible CSS (#hex or rgba()).
+> [PostCSS](https://github.com/postcss/postcss) plugin to transform [hct() color](https://www.npmjs.com/package/@material/material-color-utilities) to compatible CSS (#hex or rgba()).
 
 ## Installation
 
 ```bash
-$ npm install postcss-color-hcl
+$ npm install postcss-color-hct
 ```
 
 ## Usage
@@ -14,14 +14,14 @@ $ npm install postcss-color-hcl
 // dependencies
 var fs = require("fs")
 var postcss = require("postcss")
-var colorHcl = require("postcss-color-hcl")
+var colorHct = require("postcss-color-hct")
 
 // css to be processed
 var css = fs.readFileSync("input.css", "utf8")
 
 // process css
 var output = postcss()
-  .use(colorHcl())
+  .use(colorHct())
   .process(css)
   .css
 ```
@@ -30,8 +30,8 @@ Using this `input.css`:
 
 ```css
 body {
-  color: hcl(21, 70%, 50%, 0.5);
-  background: hcl(0, 0%, 50%);
+  color: hct(21, 70%, 50%, 0.5);
+  background: hct(0, 0%, 50%);
 }
 
 ```
@@ -53,7 +53,7 @@ Checkout [tests](test) for more examples.
 
 Work on a branch, install dev-dependencies, respect coding style & run tests before submitting a bug fix or a feature.
 
-    $ git clone https://github.com/devgru/postcss-color-hcl.git
+    $ git clone https://github.com/devgru/postcss-color-hct.git
     $ git checkout -b patch-1
     $ npm install
     $ npm test

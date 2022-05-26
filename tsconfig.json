@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "lib": [
+            "es2017",
+            "dom",
+            "dom.iterable"
+        ],
+        "declaration": true,
+        "strict": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "moduleResolution": "node",
+        "isolatedModules": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "useDefineForClassFields": false,
+        "skipLibCheck": true
+    },
+    "include": [
+        "src/index.ts"
+    ]
+}

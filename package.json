@@ -1,6 +1,6 @@
 {
   "name": "postcss-color-hct",
-  "version": "0.0.5",
+  "version": "0.0.1",
   "description": "PostCSS plugin to transform hct() function to more compatible CSS (rgb() or rgba()).",
   "keywords": [
     "postcss",
@@ -10,23 +10,29 @@
     "rgb",
     "hct"
   ],
+  "main": "./dist/postcss-color-hct.cjs.js",
+  "module": "./dist/postcss-color-hct.es.js",
   "author": "Rody Davis <rody.davis.jr@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/devgru/postcss-color-hct.git"
+    "url": "https://github.com/rodydavis/postcss-color-hct.git"
   },
   "dependencies": {
     "@material/material-color-utilities": "^0.1.2",
-    "d3-color": "0.4",
     "postcss": "5",
     "reduce-function-call": "1"
   },
   "devDependencies": {
+    "@types/node": "^17.0.35",
     "tap-spec": "^3.0.0",
-    "tape": "^4.0.0"
+    "tape": "^4.0.0",
+    "typescript": "^4.7.2",
+    "vite": "^2.9.9"
   },
   "scripts": {
+    "dev": "vite build",
+    "build": "tsc",
     "test": "node test/test.js | tap-spec"
   }
 }
