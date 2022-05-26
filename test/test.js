@@ -14,20 +14,20 @@ test("filterDeclarations()", function (t) {
 
   t.equal(
     useHct().process("a { color: hct(0, 0, 50); }").css,
-    "a { color: rgb(119, 119, 119); }",
-    "should convert hct(H, C, L) to rgb(R, G, B)."
+    "a { color: rgb(119 119 119); }",
+    "should convert hct(H, C, L) to rgb(R G B)."
   );
 
   t.equal(
     useHct().process("a { color: hct(0, 0%, 50%); }").css,
-    "a { color: rgb(119, 119, 119); }",
-    "should convert hct(H, C%, L%) to rgb(R, G, B)."
+    "a { color: rgb(119 119 119); }",
+    "should convert hct(H, C%, L%) to rgb(R G B)."
   );
 
   t.equal(
     useHct().process("a { color: hct(21, 70, 50, 0.5); }").css,
-    "a { color: rgba(211, 69, 71, 0.5); }",
-    "should convert hct(H, C, L, α) to rgba(R, G, B, α)."
+    "a { color: rgb(211 69 71 / 0.5); }",
+    "should convert hct(H, C, L, α) to rgba(R G B / α)."
   );
 
   t.equal(
@@ -38,7 +38,7 @@ test("filterDeclarations()", function (t) {
 
   t.equal(
     useHct().process("a { color: hct(180, 80, 80); }").css,
-    "a { color: rgb(0, 223, 190); }",
+    "a { color: rgb(0 223 190); }",
     "should return limited values when color is out of range."
   );
 
