@@ -26,7 +26,12 @@ function hexToRgb(hex: string, opacity?: number): string {
       b: parseInt(result[3], 16),
     };
     if (opacity) {
-      return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+      const deprecatedRgba = false;
+      if (deprecatedRgba) {
+        return `rgb(${r}, ${g}, ${b} / ${opacity})`;
+      } else {
+        return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+      }
     }
     return `rgb(${r}, ${g}, ${b})`;
   }
