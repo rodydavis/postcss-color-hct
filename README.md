@@ -1,8 +1,11 @@
 # postcss-color-hct
 
 [![Test](https://github.com/rodydavis/postcss-color-hct/actions/workflows/tests.yml/badge.svg)](https://github.com/rodydavis/postcss-color-hct/actions/workflows/tests.yml)
+[![npm package](https://badgen.net/npm/v/rodydavis/postcss-color-hct)](https://npmjs.com/package/rodydavis/postcss-color-hct)
 
 > [PostCSS](https://github.com/postcss/postcss) plugin to transform [hct() color](https://www.npmjs.com/package/@material/material-color-utilities) to compatible CSS (#hex or rgba()).
+
+Using the new [HCT](https://www.npmjs.com/package/@material/material-color-utilities) color space for [Material 3](https://m3.material.io/styles/color/overview) this plugin convert the hct color syntax to compatible CSS.
 
 ## Installation
 
@@ -14,18 +17,15 @@ $ npm install postcss-color-hct
 
 ```js
 // dependencies
-var fs = require("fs")
-var postcss = require("postcss")
-var colorHct = require("postcss-color-hct")
+var fs = require("fs");
+var postcss = require("postcss");
+var colorHct = require("postcss-color-hct");
 
 // css to be processed
-var css = fs.readFileSync("input.css", "utf8")
+var css = fs.readFileSync("input.css", "utf8");
 
 // process css
-var output = postcss()
-  .use(colorHct())
-  .process(css)
-  .css
+var output = postcss().use(colorHct()).process(css).css;
 ```
 
 Using this `input.css`:
@@ -35,7 +35,6 @@ body {
   color: hct(21, 70%, 50%, 0.5);
   background: hct(0, 0%, 50%);
 }
-
 ```
 
 you will get:
