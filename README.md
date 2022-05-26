@@ -53,7 +53,7 @@ Checkout [tests](test) for more examples.
 
 Work on a branch, install dev-dependencies, respect coding style & run tests before submitting a bug fix or a feature.
 
-    $ git clone https://github.com/devgru/postcss-color-hct.git
+    $ git clone https://github.com/rodydavis/postcss-color-hct.git
     $ git checkout -b patch-1
     $ npm install
     $ npm test
