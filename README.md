@@ -1,7 +1,7 @@
 # postcss-color-hct
 
 [![Test](https://github.com/rodydavis/postcss-color-hct/actions/workflows/tests.yml/badge.svg)](https://github.com/rodydavis/postcss-color-hct/actions/workflows/tests.yml)
-[![npm package](https://badgen.net/npm/v/rodydavis/postcss-color-hct)](https://npmjs.com/package/rodydavis/postcss-color-hct)
+[![npm package](https://badgen.net/npm/v/postcss-color-hct)](https://npmjs.com/package/postcss-color-hct)
 
 > [PostCSS](https://github.com/postcss/postcss) plugin to transform [hct() color](https://www.npmjs.com/package/@material/material-color-utilities) to compatible CSS (#hex or rgba()).
 
