@@ -27,8 +27,9 @@ function hexToRgb(hex: string, opacity?: number): string {
     };
     if (opacity) {
       return `rgb(${r} ${g} ${b} / ${opacity})`;
+    } else {
+      return `rgb(${r} ${g} ${b})`;
     }
-    return `rgb(${r} ${g} ${b})`;
   }
   return hex;
 }
