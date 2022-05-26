@@ -31,8 +31,7 @@
     "vite": "^2.9.9"
   },
   "scripts": {
-    "dev": "vite build",
-    "build": "tsc",
+    "build": "vite build",
     "test": "node test/test.js | tap-spec"
   }
 }
