@@ -5,7 +5,22 @@
 
 > [PostCSS](https://github.com/postcss/postcss) plugin to transform [hct() color](https://www.npmjs.com/package/@material/material-color-utilities) to compatible CSS (#hex or rgba()).
 
+## Overview
+
 Using the new [HCT](https://www.npmjs.com/package/@material/material-color-utilities) color space for [Material 3](https://m3.material.io/styles/color/overview) this plugin convert the hct color syntax to compatible CSS.
+
+Implementation based on the [postcss-color-hcl](https://github.com/devgru/postcss-color-hcl) plugin.
+
+CSS Custom properties are **not supported** as input for values:
+
+```css
+body {
+  --hue: 20;
+  color: hct(var(--hue), 70%, 50%, 0.5);
+}
+```
+
+Using the HCT color space at runtime can be done with the [Material Color Utilities](https://www.npmjs.com/package/@material/material-color-utilities) package for use in javascript.
 
 ## Installation
 
