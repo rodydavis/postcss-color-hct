@@ -13,7 +13,7 @@
   "main": "./dist/postcss-color-hct.cjs.js",
   "module": "./dist/postcss-color-hct.es.js",
   "author": "Rody Davis <rody.davis.jr@gmail.com>",
-  "license": "MIT",
+  "license": "Apache 2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/rodydavis/postcss-color-hct.git"
