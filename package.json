@@ -1,6 +1,6 @@
 {
   "name": "postcss-color-hct",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "PostCSS plugin to transform hct() function to more compatible CSS (rgb() or rgba()).",
   "keywords": [
     "postcss",
