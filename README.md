@@ -56,7 +56,7 @@ you will get:
 
 ```css
 body {
-  color: rgba(221, 52, 80, 0.5);
+  color: rgb(221 52 80 / 0.5);
   background: rgb(119, 119, 119);
 }
 ```
