@@ -14,22 +14,24 @@ export function getColor(values: any[]): string {
   const color = Hct.from(Number(h), Number(c), Number(t));
   const hex = hexFromArgb(color.toInt());
   const opacity = values.length > 3 ? values[3] : undefined;
-  return hexToRgb(hex, opacity);
+  return rgbToString(hexToRgb(hex), opacity);
 }
 
-function hexToRgb(hex: string, opacity?: number): string {
+function hexToRgb(hex: string): number[] {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  if (result) {
-    const { r, g, b } = {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16),
-    };
-    if (opacity) {
-      return `rgb(${r} ${g} ${b} / ${opacity})`;
-    } else {
-      return `rgb(${r} ${g} ${b})`;
-    }
+  const { r, g, b } = {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16),
+  };
+  return [r, g, b]
+}
+
+function rgbToString(rgb: number[], opacity?: number): string {
+  const [r, g, b] = rgb;
+  if (opacity) {
+    return `rgb(${r} ${g} ${b} / ${opacity})`;
+  } else {
+    return `rgb(${r} ${g} ${b})`;
   }
-  return hex;
 }
