@@ -5,3 +5,9 @@ package-lock.json
 index.d.ts
 dist
 example
+node_modules/
+src/*.js
+src/*.map
+src/*.d.ts
+!types/*.d.ts
+.wireit/

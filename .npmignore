@@ -1,7 +1,14 @@
-.gitignore
-
-node_modules/
-.idea
-
-test/
-.travis.yml
+# NPM will refuse to ignore files such as readme or license,
+# so even if you add them here (as they are now)
+# they won't actually be ignored.
+# 
+# The only stuff end users need is the contents of dist and
+# any NPM required files
+/example/
+/.wireit/
+/.github/
+/test/
+/src/
+tsconfig.json
+vite.config.ts
+/node_modules/

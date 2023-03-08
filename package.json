@@ -1,6 +1,6 @@
 {
   "name": "postcss-color-hct",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "PostCSS plugin to transform hct() function to more compatible CSS (rgb() or rgba()).",
   "keywords": [
     "postcss",
@@ -12,6 +12,7 @@
   ],
   "main": "./dist/postcss-color-hct.cjs.js",
   "module": "./dist/postcss-color-hct.es.js",
+  "types": "./dist/postcss-color-hct.d.ts",
   "author": "Rody Davis <rody.davis.jr@gmail.com>",
   "license": "Apache 2.0",
   "repository": {
@@ -28,10 +29,34 @@
     "tap-spec": "^3.0.0",
     "tape": "^4.0.0",
     "typescript": "^4.7.2",
-    "vite": "^2.9.9"
+    "vite": "^2.9.9",
+    "wireit": "^0.9.5"
   },
   "scripts": {
-    "build": "vite build",
-    "test": "node test/test.js | tap-spec"
+    "build": "wireit",
+    "test": "wireit"
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "build:ts",
+        "build:types"
+      ]
+    },
+    "test": {
+      "command": "node test/test.js | tap-spec",
+      "dependencies": [
+        "build"
+      ]
+    },
+    "build:ts": {
+      "command": "vite build"
+    },
+    "build:types": {
+      "command": "tsc src/index.ts --declaration --emitDeclarationOnly --skipLibCheck --esModuleInterop --outFile dist/postcss-color-hct.d.ts",
+      "dependencies": [
+        "build:ts"
+      ]
+    }
   }
 }

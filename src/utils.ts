@@ -11,13 +11,20 @@ export function getColor(values: any[]): string {
   if (isNaN(+h) || isNaN(+c) || isNaN(+t)) {
     throw 'Unable to parse HCT color: "' + values.join(",") + '"';
   }
-  const color = Hct.from(Number(h), Number(c), Number(t));
-  const hex = hexFromArgb(color.toInt());
+  const hex = hctToHex(h, c, t);
   const opacity = values.length > 3 ? values[3] : undefined;
   return rgbToString(hexToRgb(hex), opacity);
 }
 
-function hexToRgb(hex: string): number[] {
+type ColorValue = string | number;
+
+export function hctToHex(h: ColorValue, c: ColorValue, t: ColorValue) {
+  const color = Hct.from(Number(h), Number(c), Number(t));
+  const hex = hexFromArgb(color.toInt());
+  return hex;
+}
+
+export function hexToRgb(hex: string): number[] {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   const { r, g, b } = {
     r: parseInt(result[1], 16),

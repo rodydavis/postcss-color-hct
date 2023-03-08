@@ -1,3 +1,7 @@
+## 0.0.3
+
+* Adding declaration for typescript
+
 ## 0.0.2
 
 * Removing `rgba` in favor of `rgb` with opacity

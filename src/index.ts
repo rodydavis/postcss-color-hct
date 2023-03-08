@@ -34,8 +34,10 @@ function colorHcl(css) {
   css.walkDecls(transformDecl);
 }
 
+export function colorHclPlugin() {
+  return colorHcl;
+}
+
 // Hack needed to get the plugin to work with postcss
 declare var module: any;
-module.exports = postcss.plugin("postcss-color-hct", function colorHclPlugin() {
-  return colorHcl;
-});
+module.exports = postcss.plugin("postcss-color-hct", colorHclPlugin);
